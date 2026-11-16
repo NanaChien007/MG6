@@ -1,2 +1,3 @@
 # MG6
-
+1. The entire for loop will finish before the Update method finishes, rather than running one iteration per frame. So if the loop takes a really long time to complete, it would cause the game to lag or freeze because Unity has to wait for the loop to finish before moving on to the next frame. 
+One issue with our logic is that the cat's collider gets completely disabled whenever it's moving upward. This means the cat can pass through not only the platforms but also other objects that it's supposed to collide with. This happens because our code disables the entire collider instead of only ignoring collisions with the platforms.

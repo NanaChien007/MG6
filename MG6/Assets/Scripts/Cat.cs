@@ -58,7 +58,15 @@ public class Cat : MonoBehaviour
         _animator.SetBool("walking", _rigidbody.linearVelocity.x != 0.0f);
 
         // STEP 1 -------------------------------------------------------------
-        // Add code here to allow the player to pass through the underside of
+        if (_rigidbody.linearVelocity.y > 0f)
+        {
+            _collider.enabled = false;
+        }
+        else
+        {
+            _collider.enabled = true;
+        }
+        //Add code here to allow the player to pass through the underside of
         //      platforms.
         // Check if the player is moving upwards, and if so, diable their
         //      collider.
